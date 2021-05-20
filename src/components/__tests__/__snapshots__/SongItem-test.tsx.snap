@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing ui component SongItem matches with snapshot 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "borderBottomColor": "#d3d3d3",
+      "borderBottomWidth": 1,
+      "flex": 1,
+      "flexDirection": "row",
+      "opacity": 1,
+      "paddingVertical": 12,
+    }
+  }
+>
+  <Image
+    source={
+      Object {
+        "uri": "https://is2-ssl.mzstatic.com/image/thumb/Video/v4/54/84/96/548496ea-06f7-0276-7ab1-6592ca217a29/source/60x60bb.jpg",
+      }
+    }
+    style={
+      Object {
+        "height": 60,
+        "marginHorizontal": 10,
+        "width": 60,
+      }
+    }
+    testID="SongItem_Artwork"
+  />
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "flexDirection": "column",
+      }
+    }
+  >
+    <Text
+      numberOfLines={2}
+      style={
+        Object {
+          "color": "#1d7493",
+          "fontSize": 16,
+          "fontWeight": "bold",
+        }
+      }
+      testID="SongItem_Title"
+    >
+      Michael Jackson's This Is It
+    </Text>
+    <Text
+      style={
+        Object {
+          "color": "#1d7493",
+          "fontSize": 14,
+          "marginTop": 8,
+        }
+      }
+      testID="SongItem_Artist"
+    >
+      Artist   Kenny Ortega
+    </Text>
+  </View>
+</View>
+`;
