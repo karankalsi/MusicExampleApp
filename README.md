@@ -15,4 +15,4 @@ iOS and Android music app developed via ReactNative.
 - React Hooks
 - Unit test cases via `jest`
 - Component test cases via `@testing-library/react-native`
-- Navigation `wix/react-native-naviga
+- Navigation `wix/react-native-navigation`
