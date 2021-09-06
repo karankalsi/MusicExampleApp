@@ -19,8 +19,9 @@ jobs:
     name: 'Testing release'
     env:
       NEW_VERSION: ${{ github.event.inputs.new_version }}
-      TARGET_BRANCH: ${{ github.ref }#"refs/"*/}
     steps:
+      - name: Extract current branch
+        run: TARGET_BRANCH=${GITHUB_REF#"refs/"*/}
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
