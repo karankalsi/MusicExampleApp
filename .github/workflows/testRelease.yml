@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     name: 'Testing release'
     env:
-      TARGET_BRANCH: ${{github.base_ref}}
+      TARGET_BRANCH: ${{ github.base_ref }}
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
