@@ -22,7 +22,7 @@ jobs:
     steps:
       - name: Extract current branch
         run: |
-          TARGET_BRANCH=${GITHUB_REF#"refs/"*/} >> $GITHUB_ENV
+          echo "TARGET_BRANCH=${GITHUB_REF#"refs/"*/}" >> $GITHUB_ENV
           echo $TARGET_BRANCH
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
