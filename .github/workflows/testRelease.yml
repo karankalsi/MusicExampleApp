@@ -18,11 +18,14 @@ jobs:
     steps:
       - name: Extract current branch
         run: |
-          echo "TARGET_BRANCH=${GITHUB_REF#"refs/"*/}" >> $GITHUB_ENV
-          echo $TARGET_BRANCH
-          echo "VERSION=$(./scripts/get_current_version.sh -v version -s true -f package.json)" >> $GITHUB_ENV
+          echo "TARGET_BRANCH=${GITHUB_REF#"refs/"*/}" >> $GITHUB_ENV=
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      
+      - name: Get Current Version
+        run: |
+          echo "VERSION=$(./scripts/get_current_version.sh -v version -s true -f package.json)" >> $GITHUB_ENV
+          echo "Current Version is: $VERSION"
       
       - name: Create Awesome Badge
         uses: schneegans/dynamic-badges-action@v1.1.0
