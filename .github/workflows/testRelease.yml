@@ -24,7 +24,7 @@ jobs:
       
       - name: Get Current Version
         run: |
-          echo "VERSION=$(./scripts/get_current_version.sh -v version -s true -f package.json)" >> $GITHUB_ENV
+          echo "VERSION=$(./scripts/get_current_version.sh -v version -s true -f package.json)"
           echo "Current Version is: $VERSION"
       
       - name: Create Awesome Badge
