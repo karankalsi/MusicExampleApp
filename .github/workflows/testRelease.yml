@@ -26,7 +26,7 @@ jobs:
       - name: Create Awesome Badge
         uses: schneegans/dynamic-badges-action@v1.1.0
         with:
-          auth: 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
+          auth: ${{ github.secrets.GIST_PAT }}
           gistID: 61245751c60ea8926a8ce58363456f88
           filename: test_version_badge.json
           label: version
