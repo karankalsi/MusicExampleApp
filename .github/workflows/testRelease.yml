@@ -20,6 +20,7 @@ jobs:
         run: |
           echo "TARGET_BRANCH=${GITHUB_REF#"refs/"*/}" >> $GITHUB_ENV
           echo $TARGET_BRANCH
+          echo "VERSION=$(./scripts/get_current_version.sh -v version -s true -f package.json)" >> $GITHUB_ENV
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       
@@ -30,7 +31,7 @@ jobs:
           gistID: 9ab197d84cab86c98e0e43db1942b17b
           filename: test_version_badge.json
           label: version
-          message: 1.2.9
+          message: ${{ env.VERSION }}
           color: orange
 
       # Runs a single command using the runners shell
