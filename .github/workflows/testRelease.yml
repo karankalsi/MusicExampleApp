@@ -45,6 +45,7 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo $TARGET_BRANCH
+          echo $VERSION
           echo $NEW_VERSION
           echo Add other actions to build,
           echo test, and deploy your project.
