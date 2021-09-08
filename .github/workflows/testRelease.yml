@@ -24,8 +24,8 @@ jobs:
       
       - name: Get Current Version
         run: |
-          echo "VERSION=0.0.5" >> $GITHUB_ENV
-          echo "Current Version is: $VERSION"
+          echo "VERSION=$(./scripts/get_current_version.sh -v version -s true -f package.json)" >> $GITHUB_ENV
+          echo "Current Version is: ${{ env.VERSION }}"
       
       - name: Create Awesome Badge
         uses: schneegans/dynamic-badges-action@v1.1.0
