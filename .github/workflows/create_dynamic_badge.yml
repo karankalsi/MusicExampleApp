@@ -30,9 +30,22 @@ jobs:
         uses: WyriHaximus/github-action-get-previous-tag@v1
 
       # Runs a single command using the runners shell
-      - name: Creating dynamic badge
-        run: echo Hello, world! ${{ steps.latest_tag.outputs.tag }}
-        
+      - name: Load latest version in env
+        run: |
+          LATEST_TAG=$(echo Hello, world! ${{ steps.latest_tag.outputs.tag }})
+          echo "NATIVE_VERSION=$(echo $LATEST_TAG | cut -d'-' -f1)" >> $GITHUB_ENV
+          echo "VERSION_CODE=$(echo $LATEST_TAG | cut -d'-' -f2)" >> $GITHUB_ENV
+          echo "JS_VERSION=$(echo $LATEST_TAG | cut -d'-' -f3)" >> $GITHUB_ENV
+
+      - name: Create Dynamic Badge
+        uses: schneegans/dynamic-badges-action@v1.1.0
+        with:
+          auth: ${{ secrets.GIST_PAT }}
+          gistID: 9ab197d84cab86c98e0e43db1942b17b
+          filename: test_version_badge.json
+          label: native
+          message: $NATIVE_VERSION
+          color: orange
         
         
       
