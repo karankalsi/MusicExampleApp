@@ -1,0 +1,52 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Create Dynamic Badge
+
+# Controls when the workflow will run
+on:
+  push:
+    tags:
+    - '*'
+  
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      
+      - name: Get Latest Tag
+        id: latest_tag
+        uses: WyriHaximus/github-action-get-previous-tag@v1
+
+      # Runs a single command using the runners shell
+      - name: Load latest version in env
+        run: |
+          LATEST_TAG=$(echo Hello, world! ${{ steps.latest_tag.outputs.tag }})
+          echo "NATIVE_VERSION=$(echo $LATEST_TAG | cut -d'-' -f1)" >> $GITHUB_ENV
+          echo "VERSION_CODE=$(echo $LATEST_TAG | cut -d'-' -f2)" >> $GITHUB_ENV
+          echo "JS_VERSION=$(echo $LATEST_TAG | cut -d'-' -f3)" >> $GITHUB_ENV
+
+      - name: Create Dynamic Badge
+        uses: schneegans/dynamic-badges-action@v1.1.0
+        with:
+          auth: ${{ secrets.GIST_PAT }}
+          gistID: 9ab197d84cab86c98e0e43db1942b17b
+          filename: test_version_badge.json
+          label: native
+          message: $NATIVE_VERSION
+          color: orange
+        
+        
+      
+
