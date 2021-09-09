@@ -32,7 +32,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Load latest version in env
         run: |
-          LATEST_TAG=$(echo Hello, world! ${{ steps.latest_tag.outputs.tag }})
+          LATEST_TAG=${{ steps.latest_tag.outputs.tag }})
           echo "NATIVE_VERSION=$(echo $LATEST_TAG | cut -d'-' -f1)" >> $GITHUB_ENV
           echo "VERSION_CODE=$(echo $LATEST_TAG | cut -d'-' -f2)" >> $GITHUB_ENV
           echo "JS_VERSION=$(echo $LATEST_TAG | cut -d'-' -f3)" >> $GITHUB_ENV
