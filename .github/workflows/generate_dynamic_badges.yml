@@ -5,6 +5,8 @@ name: Create Dynamic Badge
 # Controls when the workflow will run
 on:
   push:
+    branches:
+    - main
     tags:
     - '*'
   
