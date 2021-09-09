@@ -44,7 +44,7 @@ jobs:
           gistID: 53b06964ab21c86b05897d4f2309a29c
           filename: rippling_mobile_native_badge.json
           label: native
-          message: v${{ env.NATIVE_VERSION }}
+          message: ${{ env.NATIVE_VERSION }}
           color: orange
         
         
