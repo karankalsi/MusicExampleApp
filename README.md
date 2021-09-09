@@ -1,7 +1,5 @@
 # MusicExampleApp (ReactNative)
 
-[![develop](https://github.com/karankalsi/MusicExampleApp/actions/workflows/testRelease.yml/badge.svg?branch=develop)](https://github.com/karankalsi/MusicExampleApp/actions/workflows/testRelease.yml)
-
 iOS and Android music app developed via ReactNative.
 
 ![demo](demo.gif)
