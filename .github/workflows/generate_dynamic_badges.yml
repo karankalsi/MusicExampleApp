@@ -41,8 +41,8 @@ jobs:
         uses: schneegans/dynamic-badges-action@v1.1.0
         with:
           auth: ${{ secrets.GIST_PAT }}
-          gistID: 9ab197d84cab86c98e0e43db1942b17b
-          filename: test_version_badge.json
+          gistID: 53b06964ab21c86b05897d4f2309a29c
+          filename: rippling_mobile_native_badge.json
           label: native
           message: ${{ env.NATIVE_VERSION }}
           color: orange
