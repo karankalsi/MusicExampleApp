@@ -22,7 +22,15 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      
+      - name: Get Latest Tag
+        id: latest_tag
+        uses: WyriHaximus/github-action-get-previous-tag@v1
 
       # Runs a single command using the runners shell
       - name: Creating dynamic badge
-        run: echo Hello, world!
+        run: echo Hello, world! ${{ steps.latest_tag.outputs.tag }}
+        
+        
+        
+      
