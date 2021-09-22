@@ -8,7 +8,8 @@
     "init": "yarn && cd ios && pod install && cd ..",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "testcommit": "./scripts/test.sh"
   },
   "dependencies": {
     "lodash": "^4.17.21",
