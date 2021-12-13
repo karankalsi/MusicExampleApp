@@ -29,5 +29,14 @@ jobs:
       - name: Test Commit
         run: yarn run testcommit
         
+      - name: Create backward merge PR
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: main to develop backward merge for version ${{ env.LERNA_BUILD_VERSION }}
+          base: 'develop'
+          branch-suffix: 'timestamp'
+          body: Backmerge ${{ env.LERNA_BUILD_VERSION }}
+          delete-branch: true
       
 
