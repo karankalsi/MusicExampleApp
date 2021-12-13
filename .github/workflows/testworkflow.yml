@@ -32,7 +32,7 @@ jobs:
       - name: Create backward merge PR
         uses: repo-sync/pull-request@v2
         with:
-          destination_branch: "main"
+          destination_branch: 'develop'
           github_token: ${{ secrets.GITHUB_TOKEN }}
           pr_title: main to develop backward merge for version ${{ env.LERNA_BUILD_VERSION }}
           pr_body: Backmerge ${{ env.LERNA_BUILD_VERSION }}
