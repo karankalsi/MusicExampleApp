@@ -30,7 +30,7 @@ jobs:
          git config --global user.email "serkarankalsi@gmail.com"
          git config --global user.name "Karan Kalsi"
       - name: set env
-        run: echo "BUMP_BRANCH::webapp_bump_$(date '+%Y%m%d%H%M')" >> $GITHUB_ENV
+        run: echo "BUMP_BRANCH=webapp_bump_$(date '+%Y%m%d%H%M')" >> $GITHUB_ENV
       - name: test env
         run: echo $BUMP_BRANCH
 
