@@ -17,8 +17,6 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    env:
-      BUMP_BRANCH: webapp_bump_${{ echo $(date '+%Y%m%d%H%M') }}
     
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -31,6 +29,8 @@ jobs:
         run: |
          git config --global user.email "serkarankalsi@gmail.com"
          git config --global user.name "Karan Kalsi"
+      - name: set env
+        run: echo "BUMP_BRANCH::webapp_bump_$(date '+%Y%m%d%H%M')" >> $GITHUB_ENV
       - name: test env
         run: echo $BUMP_BRANCH
 
